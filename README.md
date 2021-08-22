@@ -1,6 +1,6 @@
 # SpringKafkaConnector
 
-Implementing sending and receiving kafka messages using spring.
+Implementing sending and receiving Kafka messages using Spring.
 
 ## Using
 
