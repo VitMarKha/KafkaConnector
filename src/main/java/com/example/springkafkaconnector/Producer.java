@@ -1,20 +1,23 @@
 package com.example.springkafkaconnector;
-
 import org.apache.kafka.clients.admin.NewTopic;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Service;
 
+import java.util.Base64;
+
 @Service
 public class Producer {
-    private static final String TOPIC = "test_topic";
+    private static final String TOPIC = "testTopic";
 
     @Autowired
     private KafkaTemplate<String,String> kafkaTemplate;
 
     public void sendMessage(String message) {
-        this.kafkaTemplate.send(TOPIC, message);
+        byte[] barr = Base64.getDecoder().decode(message);
+        this.kafkaTemplate.send(TOPIC, new String(barr));
     }
 
     @Bean
