@@ -2,7 +2,7 @@
 
 Implementing sending and receiving Kafka messages using Spring.
 
-## Using
+## Usage
 
 1) Running a container - `docker-compose -f docker-compose-kafka.yaml up -d`
 2) Go to the container - `docker exec -ti [id_container] sh`
